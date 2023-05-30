@@ -1,0 +1,8 @@
+{
+  "name": "rpg-backend",
+  "version": "1.0.0",
+  "description": "Backend do sistema de Fichas de Rpg",
+  "main": "index.js",
+  "author": "Alves",
+  "license": "MIT"
+}
