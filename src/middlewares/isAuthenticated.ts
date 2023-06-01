@@ -21,6 +21,6 @@ export function isAuthenticated(req: Request, res: Response, next: NextFunction)
 
         return next();
     } catch (error) {
-        return res.status(401).end;
+        return res.status(401).end();
     }
 }
