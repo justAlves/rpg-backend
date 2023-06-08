@@ -6,6 +6,7 @@ import { isAuthenticated } from './middlewares/isAuthenticated';
 import { CreateCampaignController } from './controllers/Campaign/CreateCampaignController';
 import { GetCampaignController } from './controllers/Campaign/GetCampaignController';
 import { CreateCharacterController } from './controllers/Character/CreateCharacterController';
+import { GetUserCharController } from './controllers/Character/GetAllUserCharController';
 
 const router = Router();
 
@@ -20,5 +21,6 @@ router.get('/campaign', isAuthenticated, new GetCampaignController().handle);
 
 //character routes
 router.post('/character', isAuthenticated, new CreateCharacterController().handle);
+router.get('/character', isAuthenticated, new GetUserCharController().handle);
 
 export { router };

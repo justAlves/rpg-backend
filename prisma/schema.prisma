@@ -29,8 +29,10 @@ model Character{
   id String @id @default(uuid())
   name String
 
-  life Int @default(15)
-  sanity Int @default(15)
+  maxLife Int @default(15)
+  maxSanity Int @default(15)
+  currentLife Int @default(15)
+  currentSanity Int @default(15)
 
   strength Int
   fight Int
