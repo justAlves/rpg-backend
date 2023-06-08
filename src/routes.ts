@@ -7,6 +7,7 @@ import { CreateCampaignController } from './controllers/Campaign/CreateCampaignC
 import { GetCampaignController } from './controllers/Campaign/GetCampaignController';
 import { CreateCharacterController } from './controllers/Character/CreateCharacterController';
 import { GetUserCharController } from './controllers/Character/GetAllUserCharController';
+import { GetCharByCampaignController } from './controllers/Character/GetCharByCampaignController';
 
 const router = Router();
 
@@ -21,6 +22,7 @@ router.get('/campaign', isAuthenticated, new GetCampaignController().handle);
 
 //character routes
 router.post('/character', isAuthenticated, new CreateCharacterController().handle);
-router.get('/character', isAuthenticated, new GetUserCharController().handle);
+router.get('/character/my', isAuthenticated, new GetUserCharController().handle);
+router.get('/character', isAuthenticated, new GetCharByCampaignController().handle);
 
 export { router };
