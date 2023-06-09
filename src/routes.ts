@@ -9,6 +9,7 @@ import { CreateCharacterController } from './controllers/Character/CreateCharact
 import { GetUserCharController } from './controllers/Character/GetAllUserCharController';
 import { GetCharByCampaignController } from './controllers/Character/GetCharByCampaignController';
 import { GetCharByIdController } from './controllers/Character/GetCharByIdController';
+import { UpdateCharController } from './controllers/Character/UpdateCharController';
 
 const router = Router();
 
@@ -26,5 +27,6 @@ router.post('/character', isAuthenticated, new CreateCharacterController().handl
 router.get('/character/my', isAuthenticated, new GetUserCharController().handle);
 router.get('/character/campaign', isAuthenticated, new GetCharByCampaignController().handle);
 router.get('/character', isAuthenticated, new GetCharByIdController().handle);
+router.patch('/character', isAuthenticated, new UpdateCharController().handle);
 
 export { router };
