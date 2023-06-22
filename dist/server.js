@@ -22,6 +22,6 @@ app.use((err, req, res, next) => {
         message: 'Internal Server Error.'
     });
 });
-app.listen(3333, () => {
+app.listen(3000, () => {
     console.log('Servidor rodando... 🚀');
 });
