@@ -50,6 +50,9 @@ model Character{
   user User @relation(fields: [user_id], references: [id])
   campaign Campaign @relation(fields: [campaign_id], references: [id])
 
+  items Item[]
+  skills Skill[]
+
   @@map("characters")
 }
 
@@ -63,4 +66,34 @@ model Campaign{
   updated_at DateTime? @default(now())
 
   @@map("campaign")
+}
+
+model Item{
+  id String @id @default(uuid())
+  name String
+
+  created_at DateTime? @default(now())
+  updated_at DateTime? @default(now())
+
+  character_id String
+
+  character Character @relation(fields: [character_id], references: [id])
+
+  @@map("item")
+}
+
+model Skill{
+  id String @id @default(uuid())
+  name String
+  damage Int @default(0)
+  cost Int
+
+  created_at DateTime? @default(now())
+  updated_at DateTime? @default(now())
+
+  character_id String
+
+  character Character @relation(fields: [character_id], references: [id])
+
+  @@map("skill")
 }
